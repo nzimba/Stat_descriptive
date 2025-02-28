@@ -42,5 +42,17 @@ heart_disease %>%
   select(where(is.numeric), has_heart_disease) %>% 
   explore_all(target=has_heart_disease) 
 
+heart_disease %>% 
+  # sélection des variables catégorielle, et de la variable heart_disease = variable de groupe
+  select(where(is.factor),has_heart_disease) %>% 
+  explore_all(target=has_heart_disease) 
 
 
+
+#### Analyse des données
+
+library(readxl)
+
+#df = read.table("C:/Users/User/Documents/Apprendre_shiny/Analyse_pdf/Stat_descriptive/data.xlsx")
+
+df = read.table(choose.files())
