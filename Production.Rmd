@@ -1,0 +1,61 @@
+---
+title: "Analyse Statistique avec Packages Explore"
+author: "Mr. Beni nzimba"
+date: "2025-02-28"
+output: pdf_document
+---
+
+
+```{r}
+if (!require(funModeling)) install.packages("funModeling")
+library(funModeling)
+data(heart_disease)
+```
+
+
+```{r}
+str(heart_disease)
+```
+
+```{r}
+if (!require(dplyr)) install.packages("explore")
+#if (!require(dplyr)) install.packages("dyplr")
+if (!require(here)) install.packages("here")
+```
+
+
+```{r}
+# if (!require(dplyr)) install.packages("explore")
+#install.packages("dyplr")
+#install.packages("here")
+```
+```{r}
+library(explore)
+#library(dyplr)
+library(here)
+```
+
+
+```{r}
+explore(heart_disease)
+```
+
+```{r}
+heart_disease %>%
+  select(where(is.numeric)) %>%
+  explore_all()
+```
+
+heart_disease %>% 
+  # sélection des variables de type facteur
+  select(where(is.factor)) %>% 
+  explore_all() 
+  
+```{r}
+heart_disease %>% 
+  # sélection des variables de type facteur
+  select(where(is.factor)) %>% 
+  explore_all() 
+```
+
+
