@@ -35,6 +35,12 @@ heart_disease %>%
   select(where(is.factor)) %>% 
   explore_all() 
 
+### visauliser les données selon les groupes
+
+heart_disease %>% 
+  # sélection des variables numériques, et de la variable heart_disease = variable de groupe
+  select(where(is.numeric), has_heart_disease) %>% 
+  explore_all(target=has_heart_disease) 
 
 
 
